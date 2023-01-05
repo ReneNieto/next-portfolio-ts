@@ -1,14 +1,10 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from "../typings";
 
-type Inputs = {
-    Name: string,
-    Email: string,
-    Subject: string,
-    Message: string,
-  };
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-const ContactMe = (props: Props) => {
+const ContactMe = ({pageInfo}: Props) => {
 
     async function handleSubmit(event) {
         const form = event.target;
@@ -43,9 +39,30 @@ const ContactMe = (props: Props) => {
       }
 
   return (
-    <div className='h-screen relative flex flex-col text-center md:text-left md:flex-row max-w-7xl p-10 justify-center items-center mx-auto'>
+    <div className='h-screen relative flex flex-col text-center md:text-left md:justify-end max-w-7xl p-10 justify-center items-center mx-auto gap-8 pt-8'>
         <h3 className='absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-500 text-2xl text-center '>Contact</h3>
-
+        <div className="w-full flex flex-col justify-center items-center gap-8 mb-10">
+          <div className="w-full flex items-center md:justify-center gap-8">
+            {/* <EnvelopeOpenOutline className='h-10 w-10 text-[#800080]/50'/> */}
+            <p className="text-2xl">
+              {pageInfo.email}
+            </p>
+          </div>
+          <div className="w-full flex items-center md:justify-center  gap-8">
+            {/* <MapPinOutline className='h-10 w-10 text-[#800080]/50'/> */}
+            <p className="text-2xl"> 
+              {pageInfo.address}
+            </p>
+          </div>
+          <div className="w-full flex items-center gap-8 md:justify-center ">
+            {/* <DevicePhoneMobileOutline className='h-10 w-10 text-[#800080]/50'/> */}
+            <p className="text-2xl">
+              {pageInfo.phoneNumber}
+            </p>
+            </div>
+           
+            
+        </div>
         <form className='flex flex-col space-y-2 mx-auto max-w-md'  action="https://formspree.io/f/xyyagvlq" method="POST" onSubmit={handleSubmit}>
             <div className="flex space-x-2 w-full">
                 <input type="text" className='formInput w-1/2'  placeholder='Name' name="Name"/>

@@ -9,7 +9,7 @@ type Props = {
 
 const ExperienceCard = ({experience}: Props) => {
   return (
-    <article className='flex flex-col rounded-lg items-center space-y-7 p-8 xl:mt-0 flex-shrink-0 w-full md:w-[600px] xl:w-[900] snap-center opacity-40 hover:opacity-100 bg-[#292929] transition-opacity duration-200 overflow-hidden'>
+    <article className='flex flex-col rounded-lg items-center p-8 space-y-7 flex-shrink-0 w-full  md:w-[600px] xl:w-[900] snap-center opacity-40 hover:opacity-100 bg-[#292929] transition-opacity duration-200 overflow-hidden'>
         <motion.img src={urlFor(experience?.companyImg).url()}  alt="" 
         initial={{
              y:-100,
@@ -25,7 +25,7 @@ const ExperienceCard = ({experience}: Props) => {
         viewport={{
             once:true,
         }}
-        className='w-32 h-32 rounded-full object-cover md:rounded-lg xl:w-[150px] xl:h-[150px] mt-10 md:mt-0'/>
+        className='w-32 h-32 rounded-full object-cover md:rounded-lg xl:w-[150px] xl:h-[150px]'/>
         <div className="px-0 md:px-10">
             <h3 className='text-4xl font-light'>{experience.jobTitle}</h3>
             <h4 className='font-bold text-3xl mt-1'>{experience.companyName}</h4>
@@ -48,7 +48,7 @@ const ExperienceCard = ({experience}: Props) => {
                 : new Date(experience.dateEnded).toDateString()
             }
             </p>
-            <div className="max-h-36 md:max-h-40 overflow-y-scroll w-full">
+            <div className="max-h-36 md:max-h-40 overflow-y-scroll w-full scrollbar scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#800080]/70">
                 <ul className='list-disc space-y-4 ml-5 text-base  '>
                     {
                         experience.points.map((point, index) => (

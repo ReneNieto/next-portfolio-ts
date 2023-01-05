@@ -41,7 +41,7 @@ const About = ({pageInfo}: Props) => {
         />
 
         <div className=' space-y-4 md:space-y-10 px-0 md:px-10 mt-10 md:mt-0 '>
-            <h4 className='text-3xl text-semibold'>Here's a <span className='underline decoration-[#800080]/50'>little</span> background</h4>
+            <h4 className='text-3xl text-semibold'>Here is a <span className='underline decoration-[#800080]/50'>little</span> background</h4>
 
             <p className='text-sm md:text-base text-justify'>
                 {pageInfo?.backgroundInfo}
