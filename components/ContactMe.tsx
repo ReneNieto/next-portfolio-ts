@@ -26,6 +26,7 @@ const ContactMe = ({pageInfo}: Props) => {
           } else {
             response.json().then(data => {
               if (Object.hasOwn(data, 'errors')) {
+                // @ts-ignore
                 status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
               } else {
                 status.classList.add('text-red-500')
