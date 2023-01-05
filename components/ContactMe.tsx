@@ -6,7 +6,8 @@ type Props = {
 
 const ContactMe = ({pageInfo}: Props) => {
 
-    async function handleSubmit(event:React.SyntheticEvent) {
+  // @ts-ignore
+    async function handleSubmit(event) {
         const form = event.target;
         event.preventDefault();
         const status = event.target.lastChild;
